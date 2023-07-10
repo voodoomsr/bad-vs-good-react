@@ -4,7 +4,7 @@ interface ChildProps {
     func: () => number;
 }
 
-const Child: React.FC<ChildProps> = React.memo(({ func }) => {
+const ResponsableChild: React.FC<ChildProps> = React.memo(({ func }) => {
     console.log("Child rendered");
     return <div>Result: {func()}</div>;
 });
@@ -27,9 +27,10 @@ const ResponsableParent: FunctionComponent = () => {
     return (
         <div>
             <h1>Count: {count}</h1>
-            <Child func={func} />
+            <ResponsableChild func={func} />
         </div>
     );
 };
+
 
 export default ResponsableParent;

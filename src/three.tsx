@@ -4,7 +4,7 @@ interface ChildProps {
     func: () => number;
 }
 
-const Child: FunctionComponent<ChildProps> = ({ func }) => {
+const IrresponsableChild: FunctionComponent<ChildProps> = ({ func }) => {
     console.log("Child rendered");
     return <div>Result: {func()}</div>;
 };
@@ -27,7 +27,7 @@ const IrresponsableParent: FunctionComponent = () => {
     return (
         <div>
             <h1>Count: {count}</h1>
-            <Child func={func} />
+            <IrresponsableChild func={func} />
         </div>
     );
 };
